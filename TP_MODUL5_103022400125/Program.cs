@@ -6,8 +6,22 @@
     }
 }
 
-public class Utama
+public class DataGeneric<T>
 {
+    private T data;
+
+    public DataGeneric(T data)
+    {
+        this.data = data;
+    }
+
+    public void printData()
+    {
+        Console.WriteLine($"Data yang tersimpan adalah: {data}");
+    }
+}
+
+public class Utama{
     public static void Main(string[] args)
     {
         HaloGeneric halo = new HaloGeneric();
@@ -16,5 +30,8 @@ public class Utama
         string nama = Console.ReadLine();
 
         halo.SapaUser(nama);
+
+        DataGeneric<string> dataString = new DataGeneric<string>("103022400125");
+        dataString.printData();
     }
 }
